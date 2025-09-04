@@ -1,0 +1,9 @@
+#!/bin/bash
+# ping1.sh
+
+for REMOTE_HOST in 8.8.8.8 www.google.com 1.1.1.1 www.waketech.edu 0.0.0.1
+do
+
+	ping -c 1 $REMOTE_HOST
+	
+done
