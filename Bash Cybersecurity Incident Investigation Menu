@@ -1,0 +1,41 @@
+#!/bin/bash
+# menu.sh
+
+# Cybersecurity Incident Investigation Menu
+
+response="y"
+
+while [ "$response" == "y" ]; do
+
+	echo "--------------------------------"
+	echo "   C Y B E R S E C - M E N U"
+	echo "--------------------------------"
+	echo "1. Analyze suspicious file"
+	echo "2. Investigate user activity"
+	echo "3. Examine network traffic"
+	echo "4. Exit"
+	echo "--------------------------------"
+	read -p "Enter your choice [1-4] : " option
+	echo
+	
+	case $option in
+	
+		1) echo "analyzing suspicious file..." ;;
+		# Placeholder for analyzing a suspicious file (e.g., using antivirus scan, file hash analysis, etc.)
+	
+		2) echo "Investigating user activity..." ;;
+		# Placeholder for investigating user activity (e.g., checking logs, reviewing user sessions, etc.)
+	
+		3) echo "Examining network traffic..." ;;
+		# Placeholder for examining network traffic (e.g., using Wireshark, analyzing logs, etc.)
+	
+		4) exit ;;
+	
+		*) echo "Invalid selection!"
+	
+	esac
+	
+	echo
+	read -p "Continue (y/n)? " response
+	
+done
