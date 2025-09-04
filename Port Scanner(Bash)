@@ -1,0 +1,48 @@
+#!/bin/bash
+# port_scanner.sh
+
+# Usage: port_scanner.sh host start_port stop_port
+
+# Populate script variables from the command line arguments
+host=$1
+start_port=$2
+stop_port=$3
+
+# Function ping_check - Ping a device to see if it is active
+function pingcheck
+{
+	ping=$(ping -c 1 $host | grep bytes | wc -l)
+	if [ "$ping" -gt 1 ];then
+		
+		echo "The host $host is up."
+		
+	else
+	
+		echo "The host $host is down."
+		exit
+		
+	fi
+}
+
+# Function portcheck - Test a port to see if it is open 
+function portcheck
+{
+	for((port=$start_port; port<=$stop_port; port++))
+	do
+	
+		(echo >/dev/tcp/$host/$port) > /dev/null 2>&1
+		if [ $? -eq 0 ]; then
+		
+			echo "Port $port is open."
+		else
+		
+			echo "Port $port is closed."
+			
+		fi
+		
+	done
+}
+
+# Execute the functions
+pingcheck
+portcheck
