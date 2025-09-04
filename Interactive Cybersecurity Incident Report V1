@@ -1,0 +1,24 @@
+#!/bin/bash
+# interactive1.sh
+
+# Cybersecurity Incident Response Script
+
+# Prompt the user to enter information about a suspicious IP address
+echo "Enter the suspicious IP address:"
+read suspicious_ip
+
+$ Prompt the user to enter the severity of the incident
+echo "Enter the severity of the incident:"
+read severity
+
+# Prompt the user to enter the description of the incident
+echo "Enter a description of the incident:"
+read description
+
+# Print the gathered information
+echo "Cybersecurity Incident Report:"
+echo "--------------------------------"
+echo "Suspicious IP Address: $suspicious_ip"
+echo "Severity: $severity"
+echo "Description: $description"
+echo "--------------------------------"
