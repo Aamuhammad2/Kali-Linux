@@ -1,0 +1,20 @@
+#!/bin/bash
+# scan.sh
+
+echo
+echo "Starting port scan..."
+echo
+
+ports=("22" "80" "443" "8080")
+
+# loop that iterates over the ports array
+for port in "${ports[@]}"
+do
+	# An if statement to check if the port is open
+	if nc -zv 127.0.0.1 $port &>/dev/null; then
+	
+		echo "Port $port is open"
+	else
+		echo "Port $port is closed"
+	fi
+done
