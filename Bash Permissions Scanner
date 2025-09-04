@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Search for files and directories with permissions of 777
+
+echo "Files with permissions of 777:"
+find / -type f -perm 777 -exec ls -ld {} + 2>/dev/null
+echo
+echo "Directories with permissions of 777:"
+find / -type d -perm 777 -exec ls -ld {} + 2>/dev/null
