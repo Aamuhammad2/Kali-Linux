@@ -1,0 +1,28 @@
+#!/bin/bash -x
+
+echo
+echo "1. Intrusion Detection System (IDS)"
+echo "2. Security Information and Event Management (SIEM)"
+echo "3. Data Loss Prevention (DLP)"
+echo
+echo -n "Select your cybersecurity tool choice [1, 2, or 3]? "; 
+
+read tool
+echo
+
+if [ $tool -eq 1 ]; then 
+    echo "You picked Intrusion Detection System ($tool)" 
+
+elif [ $tool -eq 2 ]; then
+
+    	echo "You picked Security Information and Event Management ($tool)"
+
+elif [ $tool -eq 3 ]; then
+
+    	echo "You picked Data Loss Prevention ($tool)"
+
+else
+
+    	echo "Invalid selection!"
+
+fi
