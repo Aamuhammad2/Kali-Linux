@@ -1,0 +1,69 @@
+#!/bin/bash 
+# functions.sh
+
+# Cybersecurity Incident Analysis Script
+
+# Place functions here
+analyze_suspicious_file()
+{
+	file="$1"
+	echo "Analyzing suspicious file: $file"
+	# Placeholder for analyzing the suspicious file (e.g., using antivirus scan, file hash analysis, etc.)
+	echo "File analysis completed."
+}
+
+# Function to investigate user activity
+investigate_user_activity()
+{
+	user="$1"
+	echo "Investigating user activity for: $user"
+	# Placeholder for investigating user activity (e.g., checking logs, reviewing user sessions, etc.)
+	echo "User activity investigation completed."
+}
+
+# Function to examine network traffic
+examine_network_traffic()
+{
+	echo "Examining network traffic"
+	# Placeholder for examining network traffic (e.g., using Wireshark, analyzing logs, etc.)
+	echo "Network traffic examination completed."
+}
+
+response="y"
+
+while [ "$response" == "y" ]
+do
+        echo "---------------------------------"
+        echo "    C Y B E R S E C - M E N U"
+        echo "---------------------------------"
+        echo "1. Analyze suspicious file"
+        echo "2. Investigate user activity"
+        echo "3. Examine network traffic"
+        echo "4. Exit"
+        echo "---------------------------------"
+        read -p "Enter your choice [1-4] : " option
+        echo
+
+        case $option in
+            1) 
+                read -p "Enter the name of the suspicious file: " file
+                analyze_suspicious_file "$file"
+                ;;
+            2)
+                read -p "Enter the username to investigate: " user
+                investigate_user_activity "$user"
+                ;;
+            3) 
+                examine_network_traffic
+                ;;
+            4) 
+                exit ;;
+            *) 
+                echo "Invalid selection!"
+                ;;
+        esac
+
+        echo
+        read -p "Continue (y/n)? " response
+
+done
