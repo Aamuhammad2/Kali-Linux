@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+# intrusion-detection.py
+
+print("Intrusion Detection Log Analysis Program")
+print("----------------------------------------")
+print()
+
+choice = "y"
+
+while choice.strip() != 'q':
+
+    print("Please select a log type to analyze: ")
+    print("1. Firewall Log")
+    print("2. Authentication Log")
+    print("3. Network Traffic Log")
+    print()
+
+    option = input('Enter selection: ')
+
+    # Convert string to integer data type
+    option = int(option)
+
+   if option == 1:
+
+        log_entries = int(input('Enter the number of firewall log entries to analyze: '))
+
+        suspicious_events = log_entries * 0.05  # Assume 5% of entries are suspicious
+        
+        print("\nThe number of suspicious firewall events is: %d\n" % suspicious_events)
+
+     elif option == 2:
+
+        log_entries = int(input('Enter the number of authentication log entries to analyze: '))
+
+        failed_logins = int(input('Enter the number of failed login attempts: '))
+
+        suspicious_events = failed_logins * 0.1  # Assume 10% of failed logins are suspicious
+        
+        print("\nThe number of suspicious authentication events is: %d\n" % suspicious_events)
+
+     elif option == 3:
+
+        log_entries = int(input('Enter the number of network traffic log entries to analyze: '))
+
+        anomalous_traffic = int(input('Enter the number of anomalous traffic events: '))
+
+        suspicious_events = anomalous_traffic * 0.2  # Assume 20% of anomalous traffic is suspicious
+        
+        print("\nThe number of suspicious network traffic events is: %d\n" % suspicious_events)
+
+     else:
+
+        print("\nInvalid selection!\n")
+        
+    choice = input("Press any key to continue ('q' to quit): ")
