@@ -20,7 +20,7 @@ while choice.strip() != 'q':
     # Convert string to integer data type
     option = int(option)
 
-   if option == 1:
+     if option == 1:
 
         log_entries = int(input('Enter the number of firewall log entries to analyze: '))
 
