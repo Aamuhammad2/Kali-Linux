@@ -20,7 +20,7 @@ while choice.strip() != 'q':
     # Convert string to integer data type
     option = int(option)
 
-     if option == 1:
+    if option == 1:
 
         log_entries = int(input('Enter the number of firewall log entries to analyze: '))
 
@@ -28,7 +28,7 @@ while choice.strip() != 'q':
         
         print("\nThe number of suspicious firewall events is: %d\n" % suspicious_events)
 
-     elif option == 2:
+    elif option == 2:
 
         log_entries = int(input('Enter the number of authentication log entries to analyze: '))
 
@@ -38,7 +38,7 @@ while choice.strip() != 'q':
         
         print("\nThe number of suspicious authentication events is: %d\n" % suspicious_events)
 
-     elif option == 3:
+    elif option == 3:
 
         log_entries = int(input('Enter the number of network traffic log entries to analyze: '))
 
@@ -48,8 +48,9 @@ while choice.strip() != 'q':
         
         print("\nThe number of suspicious network traffic events is: %d\n" % suspicious_events)
 
-     else:
+    else:
 
         print("\nInvalid selection!\n")
         
     choice = input("Press any key to continue ('q' to quit): ")
+
